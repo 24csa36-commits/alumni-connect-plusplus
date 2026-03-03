@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import Alumni from "./models/Alumni.js";
 import alumniRoutes from "./routes/alumni.js";
 import cors from "cors";
+import eventRoutes from "./routes/eventRoutes.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -11,6 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/api/alumni", alumniRoutes);
+app.use("/api/events", eventRoutes);
 
 // 🔹 MongoDB connect
 mongoose
